@@ -18,4 +18,10 @@ class Kelas extends Model
     {
         return $this->hasMany(Siswa::class, 'id_kelas');
     }
+
+    // 1 Kelas punya banyak Guru (1 : N)
+    public function gurus(): HasMany
+    {
+        return $this->hasMany(Guru::class, 'id_kelas');
+    }
 }
